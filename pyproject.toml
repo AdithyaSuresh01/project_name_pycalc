@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pycalc"
+version = "0.1.0"
+description = "A small educational command-line calculator."
+readme = "README.md"
+authors = [
+  { name = "PyCalc Authors" }
+]
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.0",
+]
+
+[tool.setuptools]
+packages = ["calculator"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+python_files = "test_*.py"
+
+[tool.black]
+line-length = 88
+target-version = ["py39"]
+
+[tool.isort]
+profile = "black"
